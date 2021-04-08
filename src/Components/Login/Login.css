@@ -1,0 +1,8 @@
+.login {
+   height: 500px;
+   width: 400px;
+   border-radius: 5px;
+   border: 2px solid grey;
+   background-color: azure;
+   margin: 0 auto;
+}
