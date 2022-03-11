@@ -23,17 +23,17 @@ const Admin = () => {
    const [imageURL, setImageURL] = useState(null);
    const history = useHistory();
 
-   const [products, setPorducts] = useState([]);
+   const [products, setProducts] = useState([]);
    useEffect(() => {
       fetch("https://whispering-stream-19575.herokuapp.com/allProducts")
          .then((res) => res.json())
          .then((data) => {
-            setPorducts(data);
+            setProducts(data);
          });
    }, []);
 
    // Handle on submit
-   const onSubmit = (data) => {
+   const onSubmit = (data, e) => {
       const productData = {
          name: data.name,
          price: data.price,
@@ -41,6 +41,7 @@ const Admin = () => {
          quantity: data.quantity,
          imageURL: imageURL,
       };
+      e.target.reset();
 
       fetch("https://whispering-stream-19575.herokuapp.com/addProducts", {
          method: "POST",
@@ -49,9 +50,10 @@ const Admin = () => {
          },
          body: JSON.stringify(productData),
       })
-         .then(res => console.log('server connected'))
+         .then(res => console.log('server connected'));
    };
 
+   // Handling image upload
    const imageUpload = (e) => {
       const formData = new FormData();
       formData.set("key", "c523fa17adba6191129adce4be22aeda");
@@ -59,7 +61,6 @@ const Admin = () => {
       axios
          .post("https://api.imgbb.com/1/upload", formData)
          .then((res) => {
-            console.log(res.data.data.display_url);
             setImageURL(res.data.data.display_url);
          })
          .catch((error) => {
@@ -80,12 +81,12 @@ const Admin = () => {
       history.push("/admin");
    };
 
-   const handleAdd = () => {
+   const handleAddProduct = () => {
       document.getElementById("deleteTable").style.display = "none";
       document.getElementById("addForm").style.display = "block";
    };
 
-   const handleDelete = () => {
+   const handleDeleteProduct = () => {
       document.getElementById("addForm").style.display = "none";
       document.getElementById("deleteTable").style.display = "block";
    };
@@ -97,10 +98,10 @@ const Admin = () => {
                <h3 className="text-center mt-5 mb-3 text-bold text-white">
                   <FontAwesomeIcon icon={faTasks} /> Manage Product
                </h3>
-               <button onClick={handleDelete} className="btn btn-warning mx-5 ">
+               <button onClick={handleDeleteProduct} className="btn btn-warning mx-5 ">
                   <FontAwesomeIcon icon={faTrash} /> Delete Product
                </button>
-               <button onClick={handleAdd} className="manage btn btn-warning mt-3 mx-5">
+               <button onClick={handleAddProduct} className="manage btn btn-warning mt-3 mx-5">
                   <FontAwesomeIcon icon={faPlus} /> Add Product
                </button>
             </div>

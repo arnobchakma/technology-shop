@@ -28,3 +28,11 @@
     background-color: rgb(25, 213, 172);
     border-radius: 4px;
 }
+
+
+
+@media only screen and (min-width: 992px) {
+    .responsive {
+        display: hidden;
+    }
+}
