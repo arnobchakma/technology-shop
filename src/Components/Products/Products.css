@@ -1,11 +1,6 @@
-*{
-    margin:0;
-    padding:0;
-}
 .single-product {
-    border-radius: 2px;
-    background: #26b3c7;
-    width: 270px;
+    border-radius: 10px;
+    background: #26b4c7cd;
 }
 
 .single-product img {

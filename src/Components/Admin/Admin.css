@@ -1,15 +1,14 @@
 .admin {
    display: grid;
    grid-template-columns: 4fr 8fr;
-   gap: 30px;
+   gap: 60px;
    padding-right: 30px;
 }
-.sidebar {
-   background-color: #214d47;
-}
+
 .admin-body {
    height: 1000px;
 }
+
 .text-styling h6{
    color:orangered
 }

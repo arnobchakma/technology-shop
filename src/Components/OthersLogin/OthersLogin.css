@@ -1,0 +1,21 @@
+.other-login-wrapper {
+    width: 100%;
+}
+
+.other-login{
+    width: 225px;
+    margin: 0 auto;
+}
+
+.other-login button{
+    width: 225px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .other-login{
+        width: 90%;
+        margin: 0 auto;
+    }
+  }

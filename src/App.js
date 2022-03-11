@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './Components/Header/Header';
@@ -9,6 +10,7 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import { createContext, useState } from 'react';
 import CheckOut from './Components/CheckOut/CheckOut';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
+import Signup from './Components/Signup/Signup';
 
 export const UserContext = createContext();
 
@@ -37,6 +39,9 @@ function App() {
                   </PrivateRoute>
                   <Route path="/login">
                      <Login />
+                  </Route>
+                  <Route path="/signup">
+                     <Signup />
                   </Route>
                   <PrivateRoute path="/product/:id">
                      <CheckOut />
