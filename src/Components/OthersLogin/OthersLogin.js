@@ -65,9 +65,9 @@ const OthersLogin = () => {
                   : <p className="alert-warning text-center">{result}</p>
             }
 
-            <button className="btn btn-danger " onClick={() => handleSignUp(googleProvider)}> <FontAwesomeIcon icon={faGoogle} /> Continue With Google</button>
+            <button className="py-2 btn-danger " onClick={() => handleSignUp(googleProvider)}> <FontAwesomeIcon icon={faGoogle} /> Continue With Google</button>
 
-            <button className="btn btn-success" onClick={() => handleSignUp(githubProvider)}> <FontAwesomeIcon icon={faGithub} /> Continue With Github</button>
+            <button className="mx-5 py-2 btn-success" onClick={() => handleSignUp(githubProvider)}> <FontAwesomeIcon icon={faGithub} /> Continue With Github</button>
          </div>
       </div>
    );

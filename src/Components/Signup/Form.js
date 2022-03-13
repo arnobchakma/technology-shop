@@ -8,13 +8,13 @@ const Form = (props) => {
             <div className="form-group">
                 <input type="text" placeholder='Name' className={error.name ? "form-control is-valid" : "form-control is-invalid"} name="name" onChange={handleChange} required />
             </div>
-            <div className="form-group py-3">
+            <div className="form-group py-4">
                 <input type="email" placeholder='Email' className={error.email ? "form-control is-valid" : "form-control is-invalid"} name="email" onChange={handleChange} required />
             </div>
             <div className="form-group">
                 <input type="password" placeholder='Password' className={error.password ? "form-control is-valid" : "form-control is-invalid"} name="password" onChange={handleChange} required />
             </div>
-            <div className="form-group pt-3">
+            <div className="form-group pt-4">
                 <input type="password" placeholder='Confirm Password' className={error.confirmPass ? "form-control is-valid" : "form-control is-invalid"} name="confirmPass" onChange={handleChange} required />
             </div>
 

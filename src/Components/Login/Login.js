@@ -101,7 +101,7 @@ const Login = () => {
                <h3 className="text-center py-4">Login Form</h3>
                <Form handleChange={handleChange} user={user} handleSubmit={handleSubmit} result={result} loading={loading} />
                <div className="alter">
-                  <h4 className="text-center">Don't have an account? <Link className="text-danger" to="/signup">Create an account</Link></h4>
+                  <h5 className="text-center">Don't have an account? <Link className="text-primary" to="/signup">Create an account</Link></h5>
                </div>
             </div>
             <OthersLogin />

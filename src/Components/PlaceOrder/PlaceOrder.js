@@ -18,14 +18,16 @@ const PlaceOrder = () => {
    }, []);
 
    const { customer, email, date } = getOrder.length > 0 && getOrder[0];
+
+   // Confirmation message with popup
    const confirmOrder = () => {
       swal('Good Job', 'You bought the products!', 'success');
-      history.push('/home');
+      history.push('/');
    };
 
    return (
       <div className="p-4">
-         <h3 className="fw-bolder text-warning">Orders Summary</h3>
+         <h3 className="fw-bolder text-info">Orders Summary</h3>
          <hr />
          {getOrder ? (
             <div className="d-flex justify-content-center">
@@ -37,7 +39,7 @@ const PlaceOrder = () => {
             </div>
          )}
          <div>
-            <h5 className="fw-bolder text-warning">Customer Details:-</h5>
+            <h5 className="fw-bolder mt-4 text-info">Customer Details</h5>
             <div className="text-info">
                <p>Name: {customer}</p>
                <p>Email: {email}</p>
@@ -45,10 +47,10 @@ const PlaceOrder = () => {
             </div>
          </div>
          <div>
-            <h5 className="fw-bolder text-warning">Order Details:-</h5>
+            <h5 className="fw-bolder mt-5 text-info">Order Details</h5>
             <Table responsive>
                <thead>
-                  <tr className="text-warning">
+                  <tr className="text-info">
                      <th>No</th>
                      <th>Products</th>
                      <th>Quantity</th>
@@ -67,8 +69,8 @@ const PlaceOrder = () => {
                ))}
             </Table>
          </div>
-         <button onClick={confirmOrder} className="btn btn-danger">
-            Confirm Order
+         <button onClick={confirmOrder} className="btn btn-success">
+            Order Confirm
          </button>
       </div>
    );

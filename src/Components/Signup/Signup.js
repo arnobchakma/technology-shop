@@ -177,7 +177,7 @@ const Signup = () => {
                <h3 className="text-center py-4">Create an account</h3>
                <Form handleCreateUser={handleCreateUser} handleChange={handleChange} error={error} success={user.success} loading={loading} />
                <div className="other-tools">
-                  <h4 className="text-center">Already have an account? <Link to="/login">Login</Link></h4>
+                  <h5 className="text-center">Already have an account? <Link to="/login">Login</Link></h5>
                </div>
             </div>
             <OtherLogIn />
